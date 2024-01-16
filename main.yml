@@ -8,13 +8,17 @@
     - include_role:
         name: add_devops_user
         tasks_from: add_user.yml
-        
+
 - hosts: all
   become: true
   become_user: root
   gather_facts: false
   tasks:
-    - include_role:
-        name: tomcat
+      - name: Install Git
+        yum: name=git update_cache=yes state=latest
+      - name: Clone Remote Git Repository
+        git:
+          repo: https://github.com/mohiniphatak/Ansible-Sample-Application-Deployment.git
+          dest: /home/myrepo
       
 ...
