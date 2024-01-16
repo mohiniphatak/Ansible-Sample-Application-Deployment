@@ -30,7 +30,7 @@ This repository will contain sample code to deploy the sample application on lin
 
 
 ```
-ansible-playbook main.yml -i inventories/dev/hosts --user ec2-user --key-file /home/ec2-user/playbooks/ansible_aut.pem -e '@configs/dev.yml'
+ansible-playbook main.yml -i inventories/dev/hosts --user ec2-user --key-file /home/ec2-user/playbooks/ansible_auth.pem -e '@configs/dev.yml'
 
 ansible-playbook main.yml -i inventories/dev/hosts --user devops --key-file /home/devops/.ssh/id_rsa -e '@configs/dev.yml'
 
@@ -38,4 +38,8 @@ ansible-playbook main.yml -i inventories/dev/hosts --user devops --key-file /hom
 ```
 # References
 
+1. create ansible_auth.pem file and copy paste pem file in project dir
+
+follow --- https://devops4solutions.com/setup-ssh-between-two-aws-ec2-instances-using-ansible/
+2. 
 
